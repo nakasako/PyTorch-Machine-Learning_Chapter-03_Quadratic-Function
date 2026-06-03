@@ -1,0 +1,37 @@
+seed: 1234  # ランダムシード
+device: cpu  # 使用するデバイス（cpu または cuda） / このスクリプトは軽いので、cpu で十分。
+
+data:
+  num_samples: 256  # データセットのサンプル数
+  x_min: -3.0  # xの最小値
+  x_max: 3.0   # xの最大値
+  noise_std: 0.35  # ノイズの標準偏差（ノイズの量）
+  quadratic:
+    a: 0.7  # 二次関数の係数a
+    b: -0.4 # 二次関数の係数b
+    c: 1.2  # 二次関数の係数c
+
+model:
+  input_dim: 1  # 入力次元（xの次元）
+  hidden_dims: [64, 64]  # 隠れ層の次元
+  output_dim: 1  # 出力次元（yの次元）
+  activation: tanh # 活性化関数 (relu, leaky_relu, tanh, silu)
+  weight_init: xavier_uniform # 重みの初期化方法（xavier_uniform, xavier_normal, kaiming_uniform, kaiming_normal）
+  hidden_bias_range: 0.1 # 隠れ層のバイアスの初期値の範囲（-hidden_bias_range から hidden_bias_range までの一様分布で初期化）
+
+training:
+  epochs: 300 # エポック数
+  learning_rate: 0.01 # 学習率
+  weight_decay: 0.001 # L2正則化の強さ
+  log_every: 25 # ログを出力する間隔（エポック数）
+  snapshot_every: 5 # 動画用にモデルを一時保存する間隔（エポック数）
+
+paths:
+  checkpoint_dir: checkpoints  # チェックポイントを保存するディレクトリ
+  checkpoint_name: quadratic_regressor.pt  # チェックポイントのファイル名
+  output_dir: outputs  # 出力ディレクトリ
+  animation_name: quadratic_training.gif  # アニメーションのファイル名 (mp4も指定可能だが、FFMpegが必要)
+
+animation:
+  fps: 12  # アニメーションのフレームレート
+  dpi: 120  # アニメーションの解像度

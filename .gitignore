@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+checkpoints/*.pt
+outputs/*.gif
+outputs/*.mp4
+outputs/*.png
