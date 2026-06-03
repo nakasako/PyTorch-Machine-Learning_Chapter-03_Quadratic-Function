@@ -15,7 +15,7 @@ model:
   input_dim: 1  # 入力次元（xの次元）
   hidden_dims: [64, 64]  # 隠れ層の次元
   output_dim: 1  # 出力次元（yの次元）
-  activation: tanh # 活性化関数 (relu, leaky_relu, tanh, silu)
+  activation: silu # 活性化関数 (relu, leaky_relu, tanh, silu)
   weight_init: xavier_uniform # 重みの初期化方法（xavier_uniform, xavier_normal, kaiming_uniform, kaiming_normal）
   hidden_bias_range: 0.1 # 隠れ層のバイアスの初期値の範囲（-hidden_bias_range から hidden_bias_range までの一様分布で初期化）
 
