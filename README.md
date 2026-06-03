@@ -1,5 +1,7 @@
 # PyTorch Machine Learning Chapter 03
 
+このリポジトリは [https://ml.nakasako.jp](https://ml.nakasako.jp) 用の教材です。
+
 PyTorchでノイズ入りの2次関数を学習し、学習中の推論結果をアニメーションとして保存するサンプルです。
 
 ## 環境

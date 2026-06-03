@@ -156,7 +156,7 @@ def save_checkpoint(
     config: dict[str, Any],
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)  # チェックポイントを保存するディレクトリが存在しない場合は作成する
-    # torch.saveを使用して、モデルの状態辞書、損失の履歴、設定を指定されたパスに保存する。これにより、後で学習を再開したり、モデルを評価したりすることができる。
+    # モデルの状態辞書、損失の履歴、設定を指定されたパスに保存する。これにより、後で学習を再開したり、モデルを評価したりすることができる。
     torch.save(
         {
             "model_state_dict": model.state_dict(), # モデルの状態辞書を保存する (モデルのパラメータの値を含む)
