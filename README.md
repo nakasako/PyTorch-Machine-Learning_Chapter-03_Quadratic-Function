@@ -24,14 +24,23 @@ uv sync
 uv run python train.py
 ```
 
-実行すると、以下が出力されます。
+を実行すると、以下が出力されます。
 
 - `checkpoints/quadratic_regressor.pt`
 - `outputs/quadratic_training.gif`
 
+そして
+
+```powershell
+uv run python infer.py
+```
+
+を実行すると、上記チェックポイントが読み込まれ、簡単な推論結果が表示されます。
+
 ## 主なファイル
 
 - `train.py`: 学習、チェックポイント保存、アニメーション書き出し
+- `infer.py`: 簡単な推論
 - `configs/train.yaml`: 通常学習用の設定
 - `configs/train_overfitting.yaml`: 過学習を観察しやすい設定
 - `models/model.py`: 全結合ニューラルネットワーク
